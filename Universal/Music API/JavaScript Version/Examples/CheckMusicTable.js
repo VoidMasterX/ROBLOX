@@ -11,7 +11,9 @@ fs.readFile(`${config.MusicTableLocation}/${config.MusicTableName}`, "utf8", asy
 
     var MusicTable = JSON.parse(data);
     var newMusicTable = await MusicAPI.updateMusicTable(MusicTable, true);
-    newMusicTable = await MusicAPI.removeDuplicateSounds(MusicTable);
+    newMusicTable = await MusicAPI.removeDuplicateSounds(newMusicTable);
+    newMusicTable = await MusicAPI.alphabeticalSort(newMusicTable);
+    newMusicTable = await MusicAPI.fixMusicTableUUIDs(newMusicTable);
 
     fs.writeFile(`${config.MusicTableLocation}/${config.MusicTableName}`, JSON.stringify(newMusicTable), "utf8", function(err, data){
         if (err){
