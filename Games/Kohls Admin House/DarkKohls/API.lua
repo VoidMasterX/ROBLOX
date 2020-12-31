@@ -257,7 +257,7 @@ return function(Arguments)
                 end
                 
                 -- // Counter
-                wait(0.5)
+                wait(0.1)
                 Players:Chat(":unskydive " .. counterText)
             end
         end
