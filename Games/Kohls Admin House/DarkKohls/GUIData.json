@@ -275,6 +275,13 @@
             "Description": "Instantly get unskydive when people are skydived - used to counter baseplate moving, etc.",
             "Name": "Anti Skydive",
             "Type": "Toggle"
+        },
+        "AntiSit": {
+            "Admin": true,
+            "Persons299": false,
+            "Description": "Instantly reset people who sit themselves",
+            "Name": "Anti Sit",
+            "Type": "Toggle"
         }
     },
     "Server": {

@@ -764,6 +764,13 @@ local AntiSkydive = SetupTextMenu(Protections, "AntiSkydive", {
     end;
 });
 
+-- // Protections: Anti Sky
+local AntiSit = SetupTextMenu(Protections, "AntiSit", {
+    Enabled = KohlsAPI.SettingGetSet("AntiSit"),
+    Callback = function(Value)
+        KohlsAPI.SettingGetSet("AntiSit", Value);
+    end;
+});
 
 -- // Server: Alert C System Use
 local AlertCSystemUse = SetupTextMenu(Server, "AlertCSystemUse", {
