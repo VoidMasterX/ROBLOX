@@ -151,13 +151,13 @@ do
             Font = ValiantUI.Options.Font2,
             Text = "",
             BorderSizePixel = 0,
-            Parent = self.Object
+            Parent = self.Object,
             ValiantUI:Create('TextButton', {
                 Name = "TitleButton",
                 AutoButtonColor = false,
                 BackgroundColor3 = ValiantUI.Options.ButtonBackgroundColor3,
                 BackgroundTransparency = 0,
-                BorderSizePixel = 0
+                BorderSizePixel = 0,
                 Postition = UDim2.new(0, 0, 0, 0),
                 Size = UDim2.new(1, 0, 0, ValiantUI.Options.WindowSize.Y.Offset - 5),
                 Font = ValiantUI.Options.Font1,
@@ -184,7 +184,7 @@ do
                 Name = "Options",
                 BackgroundColor3 = ValiantUI.Options.NormalBackgroundColor3,
                 BackgroundTransparency = 1,
-                BorderSizePixel = 0
+                BorderSizePixel = 0,
                 Position = UDim2.new(0, 0, 0, ValiantUI.Options.WindowSize.Y.Offset - 5),
                 Size = UDim2.new(1, 0, 0, 0),
                 ClipsDescendants = true,
@@ -225,7 +225,7 @@ do
             AutoButtonColor = false,
             BackgroundColor3 = ValiantUI.Options.NormalBackgroundColor3,
             BackgroundTransparency = 1,
-            BorderSizePixel = 0
+            BorderSizePixel = 0,
             Size = UDim2.new(1, 0, 0, ValiantUI.Options.WindowSize.Y.Offset - 5),
             Font = ValiantUI.Options.Font2,
             Text = "",
@@ -239,7 +239,7 @@ do
                 Font = ValiantUI.Options.Font1,
                 Text = Name,
                 TextColor3 = Color3.fromRGB(255, 255, 255),
-                TextStrokeColor3 = Color3.fromRGB(200, 200, 200)
+                TextStrokeColor3 = Color3.fromRGB(200, 200, 200),
                 TextSize = 14,
                 TextXAlignment = Enum.TextXAlignment.Left,
             }),
@@ -247,7 +247,7 @@ do
                 Name = "CheatObjects",
                 BackgroundColor3 = ValiantUI.Options.NormalBackgroundColor3,
                 BackgroundTransparency = 1,
-                Position = UDim2.new(0.5, 0, 0, 0)
+                Position = UDim2.new(0.5, 0, 0, 0),
                 Size = UDim2.new(0.5, 0, 0, ValiantUI.Options.WindowSize.Y.Offset - 5),
             }),
         })
@@ -394,7 +394,7 @@ do
                 Toggle.CheatObjects.Size = UDim2.new(0, 25, 0, 25)
                 Toggle.CheatObjects.Position = UDim2.new(1, -25, 0, 0)      
                 local State = ValiantUI:Create('TextLabel', {
-                    Name = "State"
+                    Name = "State",
                     Parent = Toggle.CheatObjects,
                     BackgroundColor3 = Valiant.Options.NormalBackgroundColor3,
                     BackgroundTransparency = 1,
@@ -402,7 +402,7 @@ do
                     Size = UDim2.new(1, 0, 1, 0),
                     Font = ValiantUI.Options.Font1,
                     TextSize = 9,
-                    Text = (Toggled and ValiantUI.Options.ToggleEnabledText or ValiantUI.Options.ToggleDisabledText) 
+                    Text = (Toggled and ValiantUI.Options.ToggleEnabledText or ValiantUI.Options.ToggleDisabledText),
                     TextColor3 = (Toggled and ValiantUI.Options.ToggleEnabledColor or ValiantUI.Options.ToggleDisabledColor)
                 })
                 Toggle.MouseButton1Click:Connect(function()
@@ -427,7 +427,7 @@ do
                 local Flag = Options.Flag or ""
                 local Callback = Callback or function() end
                 local Min = Options.Min or 0
-                local Max = Options.Max = 9e9
+                local Max = Options.Max or 9e9
                 if Type == 'number' and (not tonumber(Default)) then
                     Location[Flag] = Default
                 else
@@ -440,8 +440,8 @@ do
                     Name = "Field",
                     Parent = TextBox.CheatObjects,
                     BackgroundColor3 = ValiantUI.Options.NormalBackgroundColor3,
-                    BorderSizePixel = 0
-                    Size = UDim2.new(1, -10, 1, 0)
+                    BorderSizePixel = 0,
+                    Size = UDim2.new(1, -10, 1, 0),
                     TextXAlignment = Enum.TextXAlignment.Right,
                     Font = ValiantUI.Options.Font1,
                     PlaceholderColor3 = Color3.fromRGB(147, 147, 147),
@@ -494,7 +494,7 @@ do
             ValiantUI.Object = self:Create('ScreenGui', {
                 Name = ValiantUI.Options.Name,
                 Parent = game:GetService("CoreGui"),
-                ZIndexBehavour = Enum.ZIndexBehavour.Global,
+                ZIndexBehavior = Enum.ZIndexBehavior.Global,
                 ResetOnSpawn = false,
             })
         end
